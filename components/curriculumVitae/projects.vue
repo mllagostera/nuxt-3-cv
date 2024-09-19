@@ -13,7 +13,7 @@ const url = useRequestURL()
 <template>
   <div class="mx-auto px-4 2xl:px-0 h-fit mt-4">
     <div v-if="projects">
-      <div class="">
+      <div id="projects" class="">
         <h2 class="leading-normal text-[32px] title-blue">
           {{ $t('projects') }}
         </h2>
@@ -30,50 +30,27 @@ const url = useRequestURL()
         >
           <p class="font-bold text-xl xl:text-2xl">{{ item.name }}</p>
           <p class="mb-2 font-semibold text-gray-400">
-            <span>{{ item.startDate }}</span> -
-            <span>{{ item.endDate }}</span>
+            <span>{{ item.startDate }}</span> - <span>{{ item.endDate }}</span>
           </p>
-          <div>
-            <span class="font-bold">{{ $t('Partner') }}: </span>
-            <span>{{ item.partner }}</span>
-          </div>
           <div v-if="item.description">
-            <div class="font-semibold">{{ $t('description') }}:</div>
-            <ul class="px-4">
-              <li v-for="desc in item.description" class="list-disc">
-                {{ desc }}
-              </li>
-            </ul>
-          </div>
-          <div v-if="item.teamSize">
-            <span class="font-semibold">{{ $t('teamSize') }}:</span>
-            <span class="px-2">{{ item.teamSize }}</span>
-          </div>
-          <div v-if="item.developmentMethodologies">
-            <span class="font-semibold"
-              >{{ $t('developmentMethodologies') }}:</span
-            >
-            <span class="px-2">{{ item.developmentMethodologies }}</span>
+            <span class="font-bold">{{ $t('description') }}:</span>
+            <span class="px-2">{{ item.description }}</span>
           </div>
           <div v-if="item.tools">
-            <span class="font-semibold">{{ $t('tools') }}:</span>
+            <span class="font-bold">{{ $t('tools') }}:</span>
             <span class="px-2">{{ item.tools }}</span>
           </div>
           <div v-if="item.technologies">
-            <span class="font-semibold">{{ $t('technologies') }}:</span>
+            <span class="font-bold">{{ $t('technologies') }}:</span>
             <span class="px-2">{{ item.technologies }}</span>
           </div>
-          <div v-if="item.achievement">
-            <div class="font-semibold">{{ $t('achievement') }}:</div>
-            <ul class="px-4">
-              <li v-for="achiev in item.achievement" class="list-disc">
-                {{ achiev }}
-              </li>
-            </ul>
-          </div>
           <div v-if="item.release">
-            <span class="font-semibold">{{ $t('release') }}:</span>
+            <span class="font-bold">{{ $t('release') }}:</span>
             <span class="px-2">{{ item.release }}</span>
+          </div>
+          <div v-if="item.url">
+            <span class="font-bold">{{ $t('release') }}:</span>
+            <span class="px-2">{{ item.url }}</span>
           </div>
         </div>
       </div>

@@ -1,9 +1,11 @@
 <script lang="ts" setup>
-import Personal from '~/components/curriculumVitae/Personal.vue'
+import Personal from '~/components/curriculumVitae/personal.vue'
 import WorkExperience from '~/components/curriculumVitae/workExperience.vue'
-import TechnicalSkills from '~/components/curriculumVitae/technicalSkills.vue'
+import HardSkills from '~/components/curriculumVitae/hardSkills.vue'
+import SoftSkills from '~/components/curriculumVitae/softSkills.vue'
 import Education from '~/components/curriculumVitae/education.vue'
 import Projects from '~/components/curriculumVitae/projects.vue'
+import Languages from '~/components/curriculumVitae/languages.vue'
 
 const { awesome } = useAppConfig()
 const { locale } = useI18n()
@@ -14,7 +16,7 @@ const html = {
 const linkData = [
   {
     rel: 'canonical',
-    href: `https://nuxtcvtemplate.vercel.app/`,
+    href: `https://mllagostera.com/`,
   },
   {
     rel: 'icon',
@@ -30,7 +32,7 @@ useHead({
   title: awesome?.name || 'Nuxt 3 Awesome Starter',
   htmlAttrs: html,
   link: linkData,
-})
+})           
 </script>
 
 <template>
@@ -38,11 +40,13 @@ useHead({
     <DelayHydration>
       <Personal />
       <WorkExperience />
-      <div
-        class="py-4 px-4 2xl:px-0 grid grid-cols-1 xl:grid-cols-2 gap-4 border-b border-b-gray-300"
-      >
-        <TechnicalSkills />
-        <Education />
+      <div class="py-4 px-4 2xl:px-0 grid grid-cols-1 xl:grid-cols-2 gap-4 border-b border-b-gray-300">
+         <Education />
+        <Languages />
+      </div>
+      <div class="py-4 px-4 2xl:px-0 grid grid-cols-1 xl:grid-cols-2 gap-4 border-b border-b-gray-300">
+        <HardSkills />
+        <SoftSkills />
       </div>
       <Projects />
     </DelayHydration>

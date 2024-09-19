@@ -11,12 +11,17 @@ const availableLanguage = [
   {
     name: 'English',
     code: 'en',
-    icon: 'flagpack:gb-ukm',
+    icon: 'flag:sh-4x3',
   },
   {
-    name: 'Việt Nam',
-    code: 'vi',
-    icon: 'twemoji:flag-vietnam',
+    name: 'Español',
+    code: 'es',
+    icon: 'flag:es-4x3',
+  },
+  {
+    name: 'Català',
+    code: 'ca',
+    icon: 'flag:es-ct-4x3',
   },
 ]
 </script>
@@ -28,6 +33,7 @@ const availableLanguage = [
       v-model="locale"
       as="div"
       class="relative flex items-center"
+      title="hola"
     >
       <HeadlessListboxLabel class="sr-only">Languages</HeadlessListboxLabel>
       <HeadlessListboxButton type="template">

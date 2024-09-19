@@ -8,6 +8,10 @@ const { locale } = useI18n()
 const personal = computed(
   () => awesome?.curriculumVitae[locale.value].information as Personal,
 )
+
+const author = computed(
+  () => awesome?.author as Personal,
+)
 const summary = computed(
   () => awesome?.curriculumVitae[locale.value]?.summary as Summary,
 )
@@ -44,14 +48,14 @@ useSeoMeta({
 </script>
 <template>
   <div class="mx-auto pb-4 px-4 2xl:px-0 h-fit border-b border-b-gray-300">
-    <div v-if="personal">
+    <div id="about" v-if="personal">
       <div class="sticky top-0">
         <h1
           class="leading-8 mt-6 font-bold uppercase text-3xl xl:text-[48px] dark:text-primary-500"
         >
-          {{ personal.fullName }}
+          {{ author.name }}
         </h1>
-        <h2 class="leading-normal mt-0 text-2xl xl:text-[38px] title-blue">
+        <h2 class="leading-normal mt-0 text-2xl xl:text-[38px] title-blue line-1 anim-typewriter">
           {{ personal.position }}
         </h2>
       </div>
@@ -71,21 +75,15 @@ useSeoMeta({
           </ul>
         </div>
         <div id="contact" class="space-y-4 min-w-[600px]">
-          <div v-show="personal.dateOfBirth">
-            <div class="title-secondary">{{ $t('dateOfBirth') }}</div>
-            <div>{{ personal.dateOfBirth }}</div>
+          <div class="leading-normal text-[32px] title-blue">
+            {{ $t('about') }}
           </div>
-          <div v-show="personal.age">
-            <div class="title-secondary">{{ $t('age') }}</div>
-            <div>{{ personal.age }}</div>
+          <div v-show="author.name">
+            <div>{{ author.name }} - {{ author.city }} </div>
           </div>
-          <div v-show="personal.email">
+          <div v-show="author.email">
             <div class="title-secondary">{{ $t('Email') }}</div>
-            <div>{{ personal.email }}</div>
-          </div>
-          <div v-show="personal.phoneNumber">
-            <div class="title-secondary">{{ $t('phone') }}</div>
-            <div>{{ personal.phoneNumber }}</div>
+            <div>{{ author.email }}</div>
           </div>
         </div>
       </div>

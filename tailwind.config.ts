@@ -75,7 +75,7 @@ export default <Partial<Config>>{
         blackBlue: '#0E6CC2',
       },
       fontFamily: {
-        sans: ['Nunito', ...defaultTheme.fontFamily.sans],
+        sans: ['Roboto', ...defaultTheme.fontFamily.sans],
       },
     },
   },

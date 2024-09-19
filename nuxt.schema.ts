@@ -3,12 +3,12 @@ import { NuxtAwesomeAppConfig } from './app.config'
 export default defineNuxtSchema({
   appConfig: {
     awesome: {
-      name: 'Nuxt 3 CV Template',
+      name: 'Nuxt 3 web page',
       description:
-        'a starter template for Nuxt 3 with minimalist themes design, built in components, drawer & menus, and more.',
+        'my nuxt3 webpage',
       project: {
         links: {
-          github: 'https://thinh.io.vn',
+          github: 'https://github.com/mllagostera',
         },
       },
       layout: {
@@ -18,7 +18,7 @@ export default defineNuxtSchema({
           },
         },
         footer: {
-          year: 2023,
+          year: 2024,
         },
         welcome: {
           title: 'CV Template',
@@ -26,11 +26,11 @@ export default defineNuxtSchema({
         },
       },
       author: {
-        name: 'heyday',
+        name: 'mllagostera',
         links: {
-          github: 'https://github.com/heydayle',
+          github: 'https://github.com/mllagostera',
           medium: '#',
-          website: 'https://thinh.io.vn',
+          website: 'https://mllagostera.com',
         },
       },
     } as NuxtAwesomeAppConfig,

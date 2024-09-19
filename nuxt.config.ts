@@ -15,17 +15,8 @@ export default defineNuxtConfig({
     layoutTransition: { name: 'layout', mode: 'out-in' },
   },
 
-  // typescripts
-  // todo: feat/strict-type-check
-  // typescript: {
-  //   strict: true,
-  //   typeCheck: true,
-  // },
-
   // modules
   modules: [
-    // chore
-    '@nuxtjs/eslint-module',
     // styling & ui
     '@nuxtjs/tailwindcss',
     'nuxt-headlessui',
@@ -42,8 +33,6 @@ export default defineNuxtConfig({
     'nuxt-delay-hydration',
     // robot
     ['@nuxtjs/robots', { configPath: '~/config/robots.config' }],
-    // todo: feat/localization
-    // '@nuxtjs/i18n'
   ],
 
   css: [
@@ -102,9 +91,14 @@ export default defineNuxtConfig({
         file: 'en-US.ts',
       },
       {
-        code: 'vi',
-        name: 'Việt Nam',
-        file: 'vi-VN.ts',
+        code: 'es',
+        name: 'Español',
+        file: 'es-ES.ts',
+      },
+      {
+        code: 'ca',
+        name: 'Català',
+        file: 'es-CA.ts',
       },
     ],
     defaultLocale: 'en',
@@ -116,33 +110,13 @@ export default defineNuxtConfig({
   delayHydration: {
     mode: 'init',
   },
-  // todo: feat/localization
-  // module::i18n
-  // i18n: {
-  //   strategy: 'no_prefix',
-  //   defaultLocale: 'en',
-  //   langDir: 'locales',
-  //   vueI18n: {
-  //     fallbackLocale: 'en',
-  //   },
-  //   detectBrowserLanguage: {
-  //     useCookie: true,
-  //     fallbackLocale: 'en',
-  //     redirectOn: 'root',
-  //   },
-  //   locales: [
-  //     {
-  //       code: 'en', // English
-  //       iso: 'en-US',
-  //       name: 'English',
-  //       file: 'en.yml',
-  //     },
-  //     {
-  //       code: 'id', // Indonesia
-  //       iso: 'id-ID',
-  //       name: 'Indonesia',
-  //       file: 'id.yml',
-  //     }
-  //   ]
-  // },
+  icon: {
+    provider: 'server',
+    customCollections: [
+      {
+        prefix: 'my-flags',
+        dir: 'assets/flags'
+      },
+    ],
+  },
 })

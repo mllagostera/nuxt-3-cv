@@ -36,7 +36,7 @@ const availableLocales = computed(() => {
             class="font-bold text-lg text-primary-500"
           >
             <Icon
-              name="simple-icons:nuxtdotjs"
+              name="pixelarticons:users"
               class="font-black text-xl font-mono mr-2 inline-block"
             />
             <span class="capitalize">{{ awesome.name }}</span>
@@ -74,6 +74,22 @@ const availableLocales = computed(() => {
             title="linkedin"
           >
             <Icon name="mdi:linkedin" />
+          </AwesomeLink>
+          <AwesomeLink
+            v-if="awesome?.project?.links?.x"
+            class="dark:text-gray-400 text-gray-600"
+            :href="awesome?.project?.links?.x"
+            title="twitter"
+          >
+            <Icon name="mdi:twitter" />
+          </AwesomeLink>
+          <AwesomeLink
+            v-if="awesome?.project?.links?.stackshare"
+            class="dark:text-gray-400 text-gray-600"
+            :href="awesome?.project?.links?.stackshare"
+            title="stackshare"
+          >
+            <Icon name="mdi:stack-exchange" />
           </AwesomeLink>
         </div>
       </div>

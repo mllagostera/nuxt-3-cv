@@ -6,5 +6,5 @@ export default [
   { Comment: 'Comment here' },
 
   // Be aware that this will NOT work on target: 'static' mode
-  { Sitemap: () => 'https://nuxtcvtemplate.vercel.app/sitemap.xml' },
+  { Sitemap: () => 'https://mllagostera.com/sitemap.xml' },
 ]

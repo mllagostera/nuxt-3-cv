@@ -12,7 +12,7 @@ const url = useRequestURL()
 </script>
 <template>
   <div class="mx-auto px-4 2xl:px-0 h-fit mt-4 border-b border-b-gray-300">
-    <div v-if="works">
+    <div id="workExperience" v-if="works">
       <div class="">
         <h2 class="leading-normal text-[32px] title-blue">
           {{ $t('workExperience') }}
@@ -44,15 +44,21 @@ const url = useRequestURL()
               {{ desc }}
             </li>
           </ul>
-          <div>
-            <span class="font-semibold">{{ $t('projects') }}: </span>
-            <span>{{ item.projects }}</span>
+          <div v-if="item.projects">
+            <span class="font-semibold">{{ $t('projects') }}</span>
+            <div class="tag-container">
+              <p>
+                 <span class="tag-item" v-for="project in item.projects" :key="project">{{ project }}</span>
+              </p>
+            </div>
           </div>
-          <div>
-            <span class="font-semibold">{{ $t('technologies') }}: </span>
-            <span class="whitespace-pre-wrap break-all">{{
-              item.technologies
-            }}</span>
+          <div v-if="item.technologies">
+            <span class="font-semibold">{{ $t('technologies') }}</span>
+            <div class="tag-container">
+              <p>
+                 <span class="tag-item" v-for="tech in item.technologies" :key="tech">{{ tech }}</span>
+              </p>
+            </div>
           </div>
         </div>
       </div>

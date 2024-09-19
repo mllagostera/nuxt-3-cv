@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 const nuxtApp = useNuxtApp()
 const { parseMenuRoute, parseMenuTitle } = useNavbarParser()
+const { locale } = useI18n()
 
 const props = defineProps({
   menu: {
@@ -27,7 +28,7 @@ const props = defineProps({
             : 'text-gray-700 dark:text-gray-300',
         ]"
       >
-        {{ parseMenuTitle(menu?.title) }}
+      {{ $t(menu?.title) }}
       </div>
     </NuxtLink>
   </template>
@@ -38,8 +39,7 @@ const props = defineProps({
           'text-gray-900 dark:text-gray-100 font-bold': isActive,
           'text-gray-700 dark:text-gray-300': !isActive,
         }"
-        >{{ parseMenuTitle(menu?.title) }}</span
-      >
+        >{{ $t(menu?.title) }}</span>
     </NuxtLink>
   </template>
   <template v-else-if="menu?.type === 'button'">
