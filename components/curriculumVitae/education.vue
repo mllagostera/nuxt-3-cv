@@ -34,7 +34,7 @@ const url = useRequestURL()
           class="pl-2"
         >
           <p class="font-bold text-2xl">{{ item.title }}</p>
-          <p class="font-semibold text-gray-400">
+          <p class="mb-2 font-semibold text-gray-400">
             <span>{{ item.school }}</span>, <span>{{ item.scholastic }}</span> 
             <span v-if="item.url"> - <a class="button" :href="item.url">{{ item.urlDescription }}🔗</a></span>
           </p>
